@@ -2,8 +2,8 @@
 
 using namespace std;
 
-float calculate(int num1, int num2, char operatorSymbol) {
-    float result = 0;
+float calculate(float num1, float num2, char operatorSymbol) {
+    float result;
     switch (operatorSymbol)
     {
     case '+':
@@ -19,8 +19,15 @@ float calculate(int num1, int num2, char operatorSymbol) {
         break;
 
     case '/':
-        result = num1 / num2 ;
-        break;
+        if (num2 ==0) {
+            cout << "Division by zero is not possible." << endl;
+            break; 
+        }
+        else {
+            result = num1 / num2 ;
+            break;
+        }
+        
     
     default:
         result = 0;
@@ -32,8 +39,8 @@ float calculate(int num1, int num2, char operatorSymbol) {
 
 int main(){
     char operation;
-    int num1;
-    int num2;
+    float num1;
+    float num2;
     float finalResult = 0;
 
     cout << "Enter the operation you wish to perform." << endl 
